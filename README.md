@@ -1,130 +1,112 @@
-# WFA-XGB CVD Prediction
+# 🫀 WFA‑XGB CVD Prediction
 
-A research-grade pipeline for **Weighted Feature Augmented (WFA) XGBoost**–based prediction of cardiovascular disease (CVD), with feature engineering, SHAP explainability, and experiment tracking.
-
----
-
-## Features
-
-- **End-to-end ML pipeline**
-  - Data loading, splitting, feature engineering, model training, evaluation.
-- **Baseline models**
-  - Logistic Regression, Random Forest, and tuned XGBoost baselines.
-- **WFA-XGB model**
-  - Custom Weighted Feature Augmented XGBoost with focal loss support.
-- **Explainability**
-  - Global and local SHAP analyses, feature importance, and augmented weights.
-- **Experiment tracking (lightweight)**
-  - CSV-based logging of ablations, mutual information scores, and SHAP summaries.
-- **Deployment-ready skeleton**
-  - API entrypoint, deployment utilities, and inference stubs for future productionization.
-- **Reproducibility**
-  - Centralized paths, configs, seeded randomness utilities.
+> **A research‑grade, end‑to‑end machine learning pipeline** for **Weighted Feature Augmented (WFA) XGBoost**–based prediction of cardiovascular disease (CVD), with advanced feature engineering, SHAP explainability, and experiment tracking.
 
 ---
 
-## Tech Stack
+## ✨ Why This Project?
+Cardiovascular disease remains one of the leading causes of mortality worldwide. This project explores a **novel WFA‑XGB modeling strategy** that enhances predictive performance by:
 
-- **Language**: Python 3.10+  
-- **ML & Data**:
-  - `numpy`, `pandas`, `scikit-learn`, `xgboost`, `shap`, `joblib`, `matplotlib`
-- **Experimentation**:
-  - Jupyter Notebooks
-- **API / Deployment**:
-  - Python app entrypoint in `app/api.py`
-  - Deployment stubs in `src/deployment/`
-- **Environment / Tooling**:
-  - `pip` for dependency management  
-  - Git / GitHub for version control
+- Augmenting features using statistical & SHAP‑driven signals
+- Applying focal loss to handle class imbalance
+- Integrating explainability for clinical interpretability
+- Maintaining full reproducibility and experiment traceability
 
 ---
 
-## Folder Structure
+## 🚀 Key Features
+
+- 🔁 **End‑to‑End ML Pipeline**  
+  Data loading → splitting → feature engineering → training → evaluation
+
+- 📊 **Baseline Models**  
+  Logistic Regression, Random Forest, and tuned XGBoost baselines
+
+- 🧠 **WFA‑XGB Model**  
+  Custom Weighted Feature Augmented XGBoost with focal loss support
+
+- 🔍 **Explainability (SHAP)**  
+  Global & local SHAP values, feature importance, augmented weights
+
+- 🧪 **Experiment Tracking**  
+  CSV‑based logging of ablations, MI scores, and SHAP summaries
+
+- 🌐 **Deployment‑Ready Skeleton**  
+  API entrypoint, deployment utilities, inference stubs
+
+- ♻️ **Reproducibility**  
+  Centralized configs, path management, seeded randomness
 
 ---
+
+## 🛠️ Tech Stack
+
+- **Language**: 🐍 Python 3.10+  
+- **ML & Data**:  
+  `numpy`, `pandas`, `scikit‑learn`, `xgboost`, `shap`, `joblib`, `matplotlib`
+
+- **Experimentation**: 📓 Jupyter Notebooks  
+- **API / Deployment**:  
+  `app/api.py`, `src/deployment/`
+
+- **Tooling**:  
+  `pip`, Git, GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
 wfa_xgb_cvd_prediction/
-├── app/
+├── app/                     # API entrypoint
 │   └── api.py
-├── data/
+├── data/                    # Datasets
 │   ├── feature_metadata.json
 │   └── processed/
 │       ├── heart_disease_processed.csv
 │       └── heart_Verified.csv
-├── experiments/
-│   ├── ablation_results.csv
-│   ├── baseline_results.csv
-│   ├── feature_augmented_weights.csv
-│   ├── mi_scores.csv
-│   ├── results_summary.csv
-│   └── shap_global_importance.csv
-├── models/
-│   ├── baselines/
-│   └── wfa_xgb/
-├── notebooks/
-│   ├── 01_data_overview.ipynb
-│   ├── 02_baseline_models.ipynb
-│   ├── 03_shap_analysis.ipynb
-│   ├── 04_feature_augmentation.ipynb
-│   ├── 05_wfa_xgb_training.ipynb
-│   ├── 06_evaluation.ipynb
-│   └── 07_ablation_study.ipynb
-├── reports/
-│   ├── figures/
-│   └── tables/
-├── src/
+├── experiments/             # Experiment outputs
+├── models/                  # Trained model artifacts
+├── notebooks/               # Research notebooks
+├── reports/                 # Figures & tables
+├── src/                     # Core ML source code
 │   ├── config/
-│   │   ├── model_config.yaml
-│   │   ├── training_config.yaml
-│   │   └── paths.py
 │   ├── data/
-│   │   ├── load_data.py
-│   │   └── split_data.py
 │   ├── features/
-│   │   ├── feature_augmentation.py
-│   │   ├── mutual_information.py
-│   │   ├── sample_weighting.py
-│   │   └── shap_extractor.py
 │   ├── models/
-│   │   ├── baseline_models.py
-│   │   ├── wfa_xgb.py
-│   │   ├── xgb_focal_loss.py
-│   │   └── calibrator.py
 │   ├── evaluation/
-│   │   ├── metrics.py
-│   │   ├── ablation.py
-│   │   └── statistical_tests.py
 │   ├── explainability/
-│   │   ├── shap_interactions.py
-│   │   └── shap_plots.py
 │   ├── training/
-│   │   └── train_pipeline.py
 │   └── utils/
-│       ├── logger.py
-│       └── seed.py
-├── tests/
-│   └── test_pipeline.py
+├── tests/                   # Unit tests
 ├── requirements.txt
 ├── LICENSE
 └── README.md
+```
 
 ---
-Setup Instructions
-1. Prerequisites
-Python 3.10+ (3.11 recommended)
 
-Git installed
+## ⚙️ Setup Instructions
 
-(Optional) virtualenv or conda
+### 1️⃣ Prerequisites
+- Python 3.10+ (3.11 recommended)
+- Git
+- (Optional) virtualenv / conda
+
 ---
-2. Clone the repository
-bash
-Copy code
-git clone https://github.com/<YOUR_USERNAME>/wfa-xgb-cvd-prediction.git
-cd wfa-xgb-cvd-prediction
+
+### 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Dhanumjay-Suragani/WFA_XGB_CVD.git
+cd wfa_xgb_cvd_prediction
+```
+
 ---
-3. Create & activate a virtual environment
-bash
-Copy code
+
+### 3️⃣ Create & Activate Virtual Environment
+
+```bash
 python -m venv .venv
 
 # Windows (PowerShell)
@@ -132,109 +114,145 @@ python -m venv .venv
 
 # macOS / Linux
 source .venv/bin/activate
+```
+
 ---
-4. Install dependencies
-bash
-Copy code
+
+### 4️⃣ Install Dependencies
+
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-Environment Variables
-No mandatory environment variables are hard-coded.
----
-Recommended for production:
+```
 
-env
-Copy code
+---
+
+## 🔐 Environment Variables
+
+No mandatory environment variables are hard‑coded.
+
+**Recommended for production:**
+
+```env
 WFA_ENV=dev
 WFA_LOG_LEVEL=INFO
 WFA_DATA_ROOT=./data
-Create a .env file locally (not committed).
+```
 
-Run Commands
-1. Run notebooks
-bash
-Copy code
+Create a `.env` file locally (not committed).
+
+---
+
+## ▶️ Run the Project
+
+### 📓 Run Notebooks
+
+```bash
 pip install jupyter
 jupyter notebook
-Open notebooks in order:
+```
 
-01_data_overview.ipynb
+Open notebooks in this order:
 
-02_baseline_models.ipynb
+1. 01_data_overview.ipynb
+2. 02_baseline_models.ipynb
+3. 03_shap_analysis.ipynb
+4. 04_feature_augmentation.ipynb
+5. 05_wfa_xgb_training.ipynb
+6. 06_evaluation.ipynb
+7. 07_ablation_study.ipynb
 
-03_shap_analysis.ipynb
-
-04_feature_augmentation.ipynb
-
-05_wfa_xgb_training.ipynb
-
-06_evaluation.ipynb
-
-07_ablation_study.ipynb
 ---
-2. Run training pipeline (when implemented)
-bash
-Copy code
+
+### 🏋️ Run Training Pipeline (when implemented)
+
+```bash
 python -m src.training.train_pipeline
+```
+
 ---
-3. Run API (when implemented)
-bash
-Copy code
+
+### 🌐 Run API (when implemented)
+
+```bash
 uvicorn app.api:app --reload
-Build Commands (Optional)
-bash
-Copy code
-cd app/frontend
-npm install
-npm run build
-Testing Commands
-bash
-Copy code
+```
+
+---
+
+## 🧪 Testing
+
+```bash
 pip install pytest
 pytest -q
-Deployment Notes
-Treat models/ as generated artifacts.
----
-Re-generate models using:
+```
 
-bash
-Copy code
+---
+
+## 📦 Deployment Notes
+
+- Treat `models/` as generated artifacts
+- Re‑generate models using:
+
+```bash
 python -m src.training.train_pipeline
-Store production models in object storage (S3, GCS) or a model registry.
+```
 
-Containerize API + models for production.
+- Store production models in object storage (S3, GCS) or a model registry
+- Containerize API + models
+- Add centralized logging in `src/utils/logger.py`
 
-Add centralized logging in src/utils/logger.py.
 ---
-Common Errors & Fixes
-ModuleNotFoundError: No module named 'xgboost'
-→ Run pip install -r requirements.txt.
 
-ImportError: cannot import name 'XGBClassifier'
-→ Pin:
+## 🛠️ Common Errors & Fixes
 
-text
-Copy code
+❌ **ModuleNotFoundError: No module named 'xgboost'**  
+➡️ `pip install -r requirements.txt`
+
+❌ **ImportError: cannot import name 'XGBClassifier'**  
+➡️ Pin version:
+```text
 xgboost==1.7.6
-MemoryError during SHAP/XGBoost
-→ Reduce n_estimators, subsample data, or shrink SHAP background.
+```
+
+❌ **MemoryError during SHAP/XGBoost**  
+➡️ Reduce `n_estimators`, subsample data, or shrink SHAP background
+
+❌ **Notebooks cannot find data**  
+➡️ Verify `src/config/paths.py`
+
+❌ **Inconsistent results**  
+➡️ Ensure `src/utils/seed.py` is used
+
 ---
-Notebooks cannot find data
-→ Verify src/config/paths.py.
 
-Inconsistent results
-→ Ensure src/utils/seed.py is used.
+## 🤝 Contributing
 
-Contribution Guidelines
-bash
-Copy code
+```bash
 git checkout -b feature/my-feature
-Follow PEP 8
+```
 
-Add docstrings
+- Follow PEP 8
+- Add docstrings
+- Add/update tests
+- Commit format:  
+  `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`
 
-Add/update tests
+---
 
-Commit format:
+## 📜 License
 
-feat:, fix:, docs:, refactor:, chore:
+This project is licensed under the LICENSE file.
+
+---
+
+## ⭐ Acknowledgements
+
+- XGBoost Team
+- SHAP Contributors
+- UCI Heart Disease Dataset
+
+---
+
+💡 *If you find this project useful, please consider giving it a star on GitHub!*
+
