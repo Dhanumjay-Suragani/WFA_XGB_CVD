@@ -1,0 +1,68 @@
+
+---
+
+## 🚫 `.gitignore`
+
+```gitignore
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+wfa_xgb_env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs & coverage
+*.log
+coverage/
+htmlcov/
+.cache/
+.pytest_cache/
+
+# Builds / distributions
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Node / frontend (future-proof)
+node_modules/
+npm-debug.log*
+yarn-error.log
+**.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.*
+*.env
+
+# Model artifacts & large binaries
+models/**/*.pkl
+models/**/*.npy
+models/**/*.h5
+notebooks/models/**/*.pkl
+
+# Experiment outputs (optional)
+# experiments/*.csv
+
+# Reports generated files (optional)
+# reports/figures/*
+# reports/tables/*

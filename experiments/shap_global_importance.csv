@@ -1,0 +1,12 @@
+,shap_importance
+age,0.14897332
+sex,0.14195468
+cp,0.6859069
+trestbps,0.21026027
+chol,0.18398342
+fbs,0.031476904
+restecg,0.30498284
+thalach,0.22620046
+exang,0.21906038
+oldpeak,0.34081522
+slope,0.958192

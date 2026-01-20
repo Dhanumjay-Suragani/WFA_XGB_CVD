@@ -1,0 +1,87 @@
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Python Bytecode / Caches
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# =========================
+# Virtual Environments
+# =========================
+.venv/
+venv/
+env/
+wfa_xgb_env/
+
+# =========================
+# Jupyter Notebook Noise
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Editor / IDE Settings
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Logs & Coverage
+# =========================
+*.log
+coverage/
+htmlcov/
+.cache/
+.pytest_cache/
+
+# =========================
+# Build / Distribution Artifacts
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Node / Frontend (Future-Proof)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log
+**.tsbuildinfo
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Model Artifacts & Large Binaries
+# =========================
+models/**/*.pkl
+models/**/*.npy
+models/**/*.h5
+notebooks/models/**/*.pkl
+
+# =========================
+# Experiment Outputs (Optional)
+# =========================
+# Uncomment if you do NOT want to track generated CSVs
+# experiments/*.csv
+
+# =========================
+# Reports Generated Files (Optional)
+# =========================
+# reports/figures/*
+# reports/tables/*
